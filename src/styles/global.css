@@ -1,0 +1,25 @@
+@layer base, tailwindcss;
+
+@import "tailwindcss" layer(tailwindcss);
+
+@font-face {
+    font-family: "Saira";
+    src:
+        url("/fonts/Saira/Saira-VariableFont_wdth,wght.ttf") format("truetype"),
+        url("/fonts/Saira/Saira-Italic-VariableFont_wdth,wght.ttf")
+            format("truetype");
+}
+
+@layer base {
+    body {
+        min-width: 100vw;
+        min-height: 100vh;
+
+        background-image: radial-gradient(circle, #001, #150021);
+        font-family: "Saira", calibri, sans-serif;
+        margin: 0;
+        padding: 0;
+
+        color: white;
+    }
+}
