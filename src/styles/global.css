@@ -22,4 +22,9 @@
 
         color: white;
     }
+
+    ::selection {
+        background-color: #ddd;
+        color: #111;
+    }
 }
