@@ -1,15 +1,50 @@
 ---
 
+import ProjectsIcon from "../../assets/icons/project.svg";
+import AboutIcon from "../../assets/icons/about.svg";
+import ContactIcon from "../../assets/icons/contact.svg";
+import { Image } from "astro:assets";
+
+import NavbarMobileTrigger from "./NavbarMobileTrigger";
+
 ---
 
-<nav class="fixed top-0 left-0 w-screen h-fit px-14 py-8 flex justify-between">
-      <div class="flex justify-center items-center">
-            <h1 class="text-2xl font-thin italic"><a href="/#">IWAN</a></h1>
+<nav class="fixed w-screen flex flex-col h-fit top-0 left-0 px-12 md:px-14 py-12 bg-black">
+      <div class="hidden navbar-trigger">
       </div>
-      <ul class="flex justify-center items-center gap-8">
-            <li><a class="cursor-pointer text-[#ccc] duration-500 hover:text-white" href="/#projects">Projects</a></li>
-            <li><a class="cursor-pointer text-[#ccc] duration-500 hover:text-white" href="/#about">About</a></li>
-            <li><a class="cursor-pointer text-[#ccc] duration-500 hover:text-white" href="/#contact">Contact</a></li>
-      </ul>
-      <button class="px-8 py-2 border border-purple-300 rounded-full bg-linear-90 bg-size-[200%] bg-position-[0_0] to-purple-500 to-70% from-purple-800 from-0% cursor-pointer shadow-[0_0_20px_1px_#ccc5] duration-500 hover:bg-position-[100%_0] hover:shadow-[0_0_30px_5px_#ccc5]">Call me!</button>
+      <NavbarMobileTrigger client:load />
+      <div class="navbar-container relative flex top-0 left-0 -translate-x-full md:translate-x-0 w-screen md:w-full h-screen md:h-full md:justify-between flex-row bg-black py-2 px-6 duration-500">
+            <div class="hidden flex-1 md:flex md:justify-start md:items-center">
+                  <h1 class="text-2xl font-thin italic"><a href="/#">IWAN</a></h1>
+            </div>
+            <ul class="flex w-full md:w-fit flex-col md:flex-row justify-start md:justify-center items-start md:items-center mt-6 md:mt-0 gap-12 sm:gap-18 md:gap-8 p-8 md:p-0">
+                  <li>
+                        <a class="cursor-pointer text-[#ccc] duration-500 hover:text-white flex items-center gap-4 text-2xl md:text-base border-b md:border-none border-white w-48 md:w-fit p-4 md:p-0 hover:w-64 hover:md:w-fit hover:p-6 hover:md:p-0" href="/#projects">
+                              <Image src={ProjectsIcon} alt="ProjectsIcon" class="inline-block md:hidden" width={50} />
+                              <span>Projects</span>
+                        </a>
+                  </li>
+                  <li>
+                        <a class="cursor-pointer text-[#ccc] duration-500 hover:text-white flex items-center gap-4 text-2xl md:text-base border-b md:border-none border-white w-48 md:w-fit p-4 md:p-0 hover:w-64 hover:md:w-fit hover:p-6 hover:md:p-0" href="/#about">
+                              <Image src={AboutIcon} alt="AboutIcon" class="inline-block md:hidden" width={50} />
+                              <span>About</span>
+                        </a>
+                  </li>
+                  <li>
+                        <a class="cursor-pointer text-[#ccc] duration-500 hover:text-white flex items-center gap-4 text-2xl md:text-base border-b md:border-none border-white w-48 md:w-fit p-4 md:p-0 hover:w-64 hover:md:w-fit hover:p-6 hover:md:p-0" href="/#contact">
+                              <Image src={ContactIcon} alt="ContactIcon" class="inline-block md:hidden" width={50} />
+                              <span>Contact</span>
+                        </a>
+                  </li>
+            </ul>
+            <div class="md:flex-1 flex justify-end">
+                  <button class="hidden md:block px-8 py-4 md:py-2 border border-purple-300 rounded-full bg-linear-90 bg-size-[200%] bg-position-[0_0] to-purple-500 to-70% from-purple-800 from-0% cursor-pointer shadow-[0_0_20px_1px_#ccc5] duration-500 hover:bg-position-[100%_0] hover:shadow-[0_0_30px_5px_#ccc5]">Let's Talk!</button>
+            </div>
+      </div>
 </nav>
+
+<style is:global>
+      .navbar-trigger ~ astro-island:has(.active) ~ .navbar-container {
+            --tw-translate-x:0%;
+      }
+</style>

@@ -15,10 +15,13 @@
         min-width: 100vw;
         min-height: 100vh;
 
-        background-image: radial-gradient(circle, #001, #150021);
+        background-color: black;
         font-family: "Saira", calibri, sans-serif;
         margin: 0;
         padding: 0;
+
+        overflow-x: hidden;
+        overflow-y: auto;
 
         color: white;
     }
