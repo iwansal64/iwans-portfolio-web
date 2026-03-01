@@ -1,4 +1,6 @@
 ---
+import AnimationCircle from "../global/AnimationCircle";
+
 
 ---
 
@@ -6,10 +8,17 @@
       <span class="pointer-events-none absolute top-0 left-0 w-[50vw] h-[50vh] -translate-x-1/2 -translate-y-1/2 bg-radial from-white/10 to-70% to-transparent"></span>
       <span class="pointer-events-none absolute bottom-0 right-0 w-[50vw] h-[50vh] translate-x-1/3 translate-y-1/2 bg-radial from-purple-300/12 to-70% to-transparent"></span>
       <div>
-            <h1 class="text-6xl md:text-8xl font-bold text-center tracking-tight text-shadow-2xl">
+            <!-- Ready To Work -->
+            <div class="scale-90 relative left-1/2 -translate-x-1/2 opacity-90 flex flex-row items-center gap-4 font-thin border border-white/30 bg-white/5 w-fit px-4 py-2 rounded-full">
+                <AnimationCircle client:load />
+                Available for work
+            </div>
+            <!-- Title -->
+            <h1 class="mt-4 text-6xl md:text-8xl font-bold text-center tracking-tight text-shadow-2xl">
                   Building Systems<br />That <span class="bg-linear-to-r from-accent from-purple-700 to-purple-400 bg-clip-text text-transparent">Scale</span>
             </h1>
-            <p class="opacity-75 text-2xl text-center font-thin mt-4 w-2/3 relative left-1/2 -translate-x-1/2">
+            <!-- Subtitle -->
+            <p class="opacity-75 text-2xl text-center font-thin mt-2 w-2/3 relative left-1/2 -translate-x-1/2">
                   <span class="font-bold text-purple-600">Fullstack engineer</span> obsessed with <span class="italic">performance, modern architecture, </span>
                   and
                   <span class="italic">exceptional user experiences</span>
