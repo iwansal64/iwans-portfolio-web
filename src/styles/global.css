@@ -36,31 +36,41 @@
             cursor: pointer;
       }
 
-      .custom-shiny-button {
+      .custom-shiny-element, .custom-window-level-shiny-element {
             position: relative;
             overflow: hidden;
-
-            --opacity: 0;
       }
 
-      .custom-shiny-button::after {
+      .custom-shiny-element {
+            --opacity: 0;
+      }
+      
+      .custom-shiny-element::after, .custom-window-level-shiny-element::after {
             content: '';
             position: absolute;
             /* left: 0;
             top: 0; */
             left: var(--mouse-pos-left);
             top: var(--mouse-pos-top);
-            opacity: var(--opacity);
-
-            transition: opacity 1s;
 
             transform: translate(-50%, -50%);
 
             width: 200%;
             aspect-ratio: 1 / 1;
 
-            background-image: radial-gradient(#fff2, #fff0);
             border-radius: 50%;
+
+            pointer-events: none;
+      }
+
+      .custom-window-level-shiny-element::after {
+            background-image: radial-gradient(#61c3, #fff0 50%);
+      }
+      
+      .custom-shiny-element::after {
+            background-image: radial-gradient(#fff3, #fff0 80%);
+            opacity: var(--opacity);
+            transition: opacity 1s;
       }
 
       ::selection {

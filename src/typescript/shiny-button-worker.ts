@@ -1,6 +1,7 @@
-const shinyButtons: HTMLButtonElement[] = Array.from(document.getElementsByClassName("custom-shiny-button")).map(element => element as HTMLButtonElement);
+const shinyElements: HTMLElement[] = Array.from(document.getElementsByClassName("custom-shiny-element")).map(element => element as HTMLElement);
+const windowLevelShinyElements: HTMLElement[] = Array.from(document.getElementsByClassName("custom-window-level-shiny-element")).map(element => element as HTMLElement);
 
-shinyButtons.forEach((button) => {
+shinyElements.forEach((button) => {
       const buttonBoundingClients = button.getBoundingClientRect();
 
       button.addEventListener("mousemove", (event) => {
@@ -20,3 +21,18 @@ shinyButtons.forEach((button) => {
             button.style.setProperty("--opacity", "0%");
       });
 });
+
+window.addEventListener("mousemove", (event) => {
+      const mouseLeft = event.clientX;
+      const mouseTop = event.clientY
+
+      windowLevelShinyElements.forEach((element) => {
+            setTimeout(() => {
+                  const buttonBoundingClients = element.getBoundingClientRect();
+                  const left = mouseLeft-buttonBoundingClients.left
+                  const top = mouseTop-buttonBoundingClients.top;
+                  element.style.setProperty("--mouse-pos-left", left+"px");
+                  element.style.setProperty("--mouse-pos-top", top+"px");
+            }, 100);
+      })
+})
