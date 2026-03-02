@@ -7,6 +7,11 @@
       src:
             url("/fonts/Saira/Saira-VariableFont_wdth,wght.ttf") format("truetype"),
             url("/fonts/Saira/Saira-Italic-VariableFont_wdth,wght.ttf") format("truetype");
+      font-display: swap;
+      size-adjust: 88%;
+      ascent-override: 95%;
+      descent-override: 20%;
+      line-gap-override: 0%;
 }
 
 @layer base {
@@ -14,8 +19,10 @@
             min-width: 100vw;
             min-height: 100vh;
 
-            background-color: black;
             font-family: "Saira", calibri, sans-serif;
+
+            background-color: black;
+            
             margin: 0;
             padding: 0;
 
