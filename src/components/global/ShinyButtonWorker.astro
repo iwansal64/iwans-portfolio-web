@@ -1,0 +1,28 @@
+---
+
+---
+
+<script>
+      const shinyButtons: HTMLButtonElement[] = Array.from(document.getElementsByClassName("custom-shiny-button")).map((ele) => (ele as HTMLButtonElement));
+
+      shinyButtons.forEach((button) => {
+            const buttonBoundingClients = button.getBoundingClientRect();
+
+            button.addEventListener("mousemove", (event) => {
+                  setTimeout(() => {
+                        const left = event.clientX-buttonBoundingClients.left;
+                        const top = event.clientY-buttonBoundingClients.top;
+                        button.style.setProperty("--mouse-pos-left", left+"px");
+                        button.style.setProperty("--mouse-pos-top", top+"px");
+                  }, 100);
+            });
+
+            button.addEventListener("mouseenter", () => {
+                  button.style.setProperty("--opacity", "100%");
+            });
+
+            button.addEventListener("mouseleave", () => {
+                  button.style.setProperty("--opacity", "0%");
+            });
+      });
+</script>

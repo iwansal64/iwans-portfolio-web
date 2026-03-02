@@ -1,13 +1,14 @@
 ---
 import AnimationCircle from "../global/AnimationCircle";
-
+import ShinyButtonWorker from "../global/ShinyButtonWorker.astro";
 
 ---
 
-<div class="w-4/5 flex flex-col items-center justify-center absolute left-1/2 top-1/2 -translate-1/2">
+<div class="w-screen h-screen flex flex-col items-center justify-center">
+      <ShinyButtonWorker />
       <span class="pointer-events-none absolute top-0 left-0 w-[50vw] h-[50vh] -translate-x-1/2 -translate-y-1/2 bg-radial from-white/10 to-70% to-transparent"></span>
       <span class="pointer-events-none absolute bottom-0 right-0 w-[50vw] h-[50vh] translate-x-1/3 translate-y-1/2 bg-radial from-purple-300/12 to-70% to-transparent"></span>
-      <div>
+      <div class="w-4/5">
             <!-- Ready To Work -->
             <div class="scale-90 relative left-1/2 -translate-x-1/2 opacity-90 flex flex-row items-center gap-4 font-thin border border-white/30 bg-white/5 w-fit px-4 py-2 rounded-full">
                 <AnimationCircle client:load />
@@ -23,5 +24,10 @@ import AnimationCircle from "../global/AnimationCircle";
                   and
                   <span class="italic">exceptional user experiences</span>
             </p>
+            <!-- Action Buttons -->
+            <div class="flex flex-row gap-4 justify-center items-center w-full h-fit p-4">
+                  <button class="bg-white text-black py-4 px-8 rounded-full">View Projects</button>
+                  <button class="bg-black text-white border border-white py-4 px-8 rounded-full custom-shiny-button">Get In Touch</button>
+            </div>
       </div>
 </div>
