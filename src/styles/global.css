@@ -61,14 +61,15 @@
             border-radius: 50%;
 
             pointer-events: none;
+            z-index: 100;
       }
 
       .custom-window-level-shiny-element::after {
-            background-image: radial-gradient(#61c3, #fff0 50%);
+            background-image: radial-gradient(#61c4, #61c2 30%, #fff0);
       }
       
       .custom-shiny-element::after {
-            background-image: radial-gradient(#fff3, #fff0 80%);
+            background-image: radial-gradient(#fff4, #fff0 80%);
             opacity: var(--opacity);
             transition: opacity 1s;
       }
