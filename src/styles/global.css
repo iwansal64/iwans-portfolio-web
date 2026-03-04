@@ -39,6 +39,9 @@
       .custom-shiny-element, .custom-window-level-shiny-element {
             position: relative;
             overflow: hidden;
+
+            --shiny-width: 200%;
+            --shiny-opaque: 80%;
       }
 
       .custom-shiny-element {
@@ -55,7 +58,7 @@
 
             transform: translate(-50%, -50%);
 
-            width: 200%;
+            width: var(--shiny-width);
             aspect-ratio: 1 / 1;
 
             border-radius: 50%;
@@ -65,11 +68,11 @@
       }
 
       .custom-window-level-shiny-element::after {
-            background-image: radial-gradient(#61c4, #61c2 30%, #fff0);
+            background-image: radial-gradient(#61c4, #61c2 30%, #fff0 var(--shiny-opaque));
       }
       
       .custom-shiny-element::after {
-            background-image: radial-gradient(#fff4, #fff0 80%);
+            background-image: radial-gradient(#fff3, #fff1 var(--shiny-opaque), #fff0);
             opacity: var(--opacity);
             transition: opacity 1s;
       }

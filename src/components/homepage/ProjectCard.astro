@@ -1,0 +1,57 @@
+---
+
+import { Image } from "astro:assets";
+
+import GithubImage from "../../assets/icons/github.svg";
+import LinkImage from "../../assets/icons/link.svg";
+
+interface Props {
+      title: string,
+      description: string,
+      github_link: string,
+      link?: string,
+      milestones: {
+            numeric: string,
+            about: string
+      }[],
+      techStack: string[]
+}
+
+const { title, description, github_link, link, milestones, techStack } = Astro.props;
+
+---
+
+<div class="border border-white p-6 rounded-2xl custom-shiny-element hover:[&_>span]:translate-x-full hover:[&_>span]:left-full hover:[&_>span]:duration-500 hover:scale-105 duration-500" style="--shiny-width: 100%; --shiny-opaque: 0%;">
+      <span class="absolute top-1/2 left-0 -translate-x-[200%] -translate-y-1/2 duration-0 w-48 h-[250%] -rotate-45 bg-white/10 z-100 pointer-events-none"></span>
+      <div class="flex flex-row items-center">
+            <!-- Project Title -->
+            <h3 class="text-2xl">{title}</h3>
+            <span class="flex-1"></span>
+            <!-- Project Links -->
+            <div class="flex flex-row gap-4 opacity-75 *:cursor-pointer">
+                  <div class="hover:scale-110 duration-250">
+                        <a href={github_link} target="_blank"></a>
+                        <Image src={GithubImage} alt="Github Icon" width={30} />
+                  </div>
+                  <div class={link?"hover:scale-110 duration-250":"pointer-events-none opacity-20 cursor-not-allowed"}>
+                        <a href={link} target="_blank"></a>
+                        <Image src={LinkImage} alt="Link Icon" width={30} />
+                  </div>
+            </div>
+      </div>
+      <!-- Project Description -->
+      <p class="mt-4 font-semibold opacity-50">{description}</p>
+      <!-- Project Milestone -->
+      <div class="mt-4 grid grid-cols-2 pb-2 border-b border-white/20">
+            {milestones.map((milestone) => {
+                  return <div>
+                        <p class="text-xl font-semibold text-purple-400">{milestone.numeric}</p>
+                        <p class="text-md opacity-50">{milestone.about}</p>
+                  </div>;
+            })}
+      </div>
+      <!-- Project Tech Stack -->
+      <div class="mt-4 flex flex-row gap-4 *:bg-white/10 *:border *:border-white/20 *:py-1 *:px-4 *:rounded-full">
+            {techStack.map((stack) => <span>{stack}</span>)}
+      </div>
+</div>

@@ -1,0 +1,32 @@
+---
+import { projects } from "../../typescript/projects";
+import ProjectCard from "./ProjectCard.astro";
+
+
+---
+
+<div class="w-screen mt-8 p-12">
+      <!-- Featured Work -->
+      <div class="scale-90 opacity-90 flex flex-row items-center gap-4 font-thin border border-white/30 bg-white/5 w-fit px-1 md:px-4 py-2 rounded-full">
+            Featured Works
+      </div>
+      <h2 class="mt-4 text-5xl font-thin">Built for <span class="font-semibold">Impact</span></h2>
+      <h2 class="mt-4 text-xl font-semibold opacity-50">Systems I engineered to solve real world problems with dedication and love 💖</h2>
+      <div class="custom-project-list">
+            {projects.map((projectData) => {
+                  return <ProjectCard title={projectData.title} description={projectData.description} link={projectData.link} github_link={projectData.github_link} milestones={projectData.milestones} techStack={projectData.techStack} />
+            })}
+      </div>
+</div>
+
+<style>
+      .custom-project-list {
+            margin-top: 42px;
+            
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+
+            gap: 24px;
+      }
+</style>

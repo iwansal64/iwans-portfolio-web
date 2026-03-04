@@ -4,12 +4,15 @@ import Hero from "../components/homepage/Hero.astro";
 import Navbar from "../components/homepage/Navbar.astro";
 import SitePerformance from "../components/homepage/SitePerformance.astro";
 import ShinyButtonWorker from "../components/global/ShinyButtonWorker.astro";
+import Project from "../components/homepage/Project.astro";
 
 ---
 
 <Layout>
-    <Hero />
-    <Navbar />
-    <SitePerformance />
     <ShinyButtonWorker />
+
+    <Navbar />
+    <Hero />
+    <SitePerformance />
+    <Project />
 </Layout>
