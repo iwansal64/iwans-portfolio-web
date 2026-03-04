@@ -7,7 +7,7 @@ import { Image } from "astro:assets";
 import NavbarMobileTrigger from "./NavbarMobileTrigger";
 ---
 
-<nav class="fixed w-screen flex flex-col h-fit top-0 left-0">
+<nav class="fixed w-screen flex flex-col h-fit top-0 left-0 z-100">
       <div class="absolute left-0 top-0 w-full h-full bg-black/70 backdrop-blur-lg"></div>
       <div class="absolute md:relative top-0 left-0 w-full h-full px-12 md:px-14 py-8">
             <NavbarMobileTrigger client:load />
