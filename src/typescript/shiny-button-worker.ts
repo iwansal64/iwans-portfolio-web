@@ -2,9 +2,8 @@ const shinyElements: HTMLElement[] = Array.from(document.getElementsByClassName(
 const windowLevelShinyElements: HTMLElement[] = Array.from(document.getElementsByClassName("custom-window-level-shiny-element")).map(element => element as HTMLElement);
 
 shinyElements.forEach((button) => {
-      const buttonBoundingClients = button.getBoundingClientRect();
-
       button.addEventListener("mousemove", (event) => {
+            const buttonBoundingClients = button.getBoundingClientRect();
             setTimeout(() => {
                   const left = event.clientX-buttonBoundingClients.left;
                   const top = event.clientY-buttonBoundingClients.top;
