@@ -1,4 +1,4 @@
-import { UseNavbarHooks } from "../../hooks/homepage/useNavbarHooks";
+import { UseNavbarHooks } from "../../../hooks/homepage/useNavbarHooks";
 
 export default function Navbar() {
       const { isOpen, setIsOpen } = UseNavbarHooks();
