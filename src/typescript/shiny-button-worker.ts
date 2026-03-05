@@ -21,17 +21,25 @@ shinyElements.forEach((button) => {
       });
 });
 
-window.addEventListener("mousemove", (event) => {
-      const mouseLeft = event.clientX;
-      const mouseTop = event.clientY
+let globalMouseLeft = 0;
+let globalMouseTop = 0;
 
+function updateWindowLevelShinyElement() {
       windowLevelShinyElements.forEach((element) => {
             setTimeout(() => {
                   const buttonBoundingClients = element.getBoundingClientRect();
-                  const left = mouseLeft-buttonBoundingClients.left
-                  const top = mouseTop-buttonBoundingClients.top;
+                  const left = globalMouseLeft-buttonBoundingClients.left
+                  const top = globalMouseTop-buttonBoundingClients.top;
                   element.style.setProperty("--mouse-pos-left", left+"px");
                   element.style.setProperty("--mouse-pos-top", top+"px");
             }, 100);
-      })
-})
+      });
+}
+
+window.addEventListener("mousemove", (event) => {
+      globalMouseLeft = event.clientX;
+      globalMouseTop = event.clientY;
+
+      updateWindowLevelShinyElement();
+});
+window.addEventListener("scroll", updateWindowLevelShinyElement);
