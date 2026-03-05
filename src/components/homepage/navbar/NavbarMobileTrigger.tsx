@@ -8,7 +8,7 @@ export default function Navbar() {
       }
 
       return (
-            <div className="flex flex-row justify-end bg-black py-4 px-8">
+            <div className="flex flex-row justify-end bg-black md:bg-transparent py-4 px-8">
                   <button className="relative w-8 aspect-square cursor-pointer md:hidden" onClick={toggleNavbar}>
                         <span className={`pointer-events-none absolute left-0 bg-white w-full h-1 duration-250 ${isOpen ? "-rotate-45 top-1/2 -translate-y-1/2" : "top-0"}`}></span>
                         <span className={`pointer-events-none absolute left-0 bg-white w-full h-1 duration-250 ${isOpen ? "rotate-45" : "rotate-0"} top-1/2 -translate-y-1/2`}></span>
