@@ -1,0 +1,19 @@
+---
+
+import ContactForm from "./ContactForm";
+
+---
+
+
+<div id="contact" class="mt-24 md:mt-48 w-full px-2 py-8 border-t border-white/20">
+      <div class="flex flex-col w-full items-center p-4">
+            <div class="scale-90 opacity-90 flex flex-row items-center gap-4 border border-purple-700/50 bg-purple-700/10 text-purple-700/80 font-semibold w-fit px-1 md:px-4 py-2 rounded-full">
+                  Let's Connect
+            </div>
+            <h2 class="w-full text-center mt-4 text-6xl font-bold">Ready to Build <br> Something <span class="bg-linear-to-r from-accent from-purple-600 to-purple-300 bg-clip-text text-transparent">Spectacular</span>?</h2>
+            <p class="max-w-154 text-center mt-4 text-base md:text-lg font-semibold opacity-75">I'm always interested on how to make use of my skills to help you achieve your goals with your opinions and requests being my first priority here. I always thrive to use different tools and languages and adapt to your needs so, don't hesitate to talk about it with me!</p>
+            <div class="w-full max-w-96 mt-12 flex flex-col gap-4 font-semibold">
+                  <ContactForm client:visible />
+            </div>
+      </div>
+</div>
