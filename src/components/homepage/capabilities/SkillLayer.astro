@@ -1,0 +1,31 @@
+---
+
+interface Props {
+      abbreviation: string;
+      title: string;
+      description: string;
+      skillsets: string[]
+}
+
+const { abbreviation, title, description, skillsets } = Astro.props;
+
+---
+
+<div class="w-full">
+      <div class="duration-250 p-8 flex flex-row gap-4 rounded-2xl border border-white/20">
+            <div class="h-full">
+                  <div class="w-14 aspect-square rounded-2xl flex justify-center items-center text-xl font-thin bg-purple-700/5 border border-white/40">
+                        {abbreviation}
+                  </div>
+            </div>
+            <div class="h-full flex flex-col">
+                  <h3 class="text-3xl font-bold">{title}</h3>
+                  <p class="font-thin">{description}</p>
+                  <div class="mt-4  flex flex-row flex-wrap gap-4 *:border *:border-white *:py-1 *:px-4 *:rounded-xl">
+                        {skillsets.map((skill) => {
+                              return <span>{skill}</span>
+                        })}
+                  </div>
+            </div>
+      </div>
+</div>
