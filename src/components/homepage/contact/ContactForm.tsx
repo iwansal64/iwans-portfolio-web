@@ -17,12 +17,12 @@ export default function ContactForm() {
       
       return <>
             <div className="w-full flex flex-col gap-2">
-                  <p>Your Name <span className="opacity-50">(Please?)</span></p>
-                  <input className="w-full border-b border-white/20 py-2 px-4" type="text" onChange={(event) => setName(event.target.value)}></input>
+                  <label htmlFor="name">Your Name <span className="opacity-50">(Please?)</span></label>
+                  <input id="name" className="w-full border-b border-white/20 py-2 px-4" type="text" onChange={(event) => setName(event.target.value)}></input>
             </div>
             <div className="w-full flex flex-col gap-2">
-                  <p>What software you want to build?</p>
-                  <input className="w-full border-b border-white/20 py-2 px-4" type="text" onChange={(event) => setDescription(event.target.value)}></input>
+                  <label htmlFor="description">What software you want to build?</label>
+                  <input id="description" className="w-full border-b border-white/20 py-2 px-4" type="text" onChange={(event) => setDescription(event.target.value)}></input>
             </div>
             <div className="mt-4 flex justify-center items-center">
                   <button className="border border-white/20 py-2 px-8 rounded-full" onClick={sendMessage}>

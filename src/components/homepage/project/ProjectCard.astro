@@ -30,7 +30,7 @@ const { title, description, github_link, link, milestones, techStack } = Astro.p
             <!-- Project Links -->
             <div class="flex flex-row gap-4 opacity-75 *:cursor-pointer">
                   <div class="hover:scale-110 duration-250">
-                        <a href={github_link} target="_blank"><Image src={GithubImage} alt="Github Icon" width={30} /></a>
+                        <a href={github_link} target="_blank" aria-label="Go to the Github Repository for the project!"><Image src={GithubImage} alt="Github Icon" width={30} /></a>
                   </div>
                   <div class={link?"hover:scale-110 duration-250":"pointer-events-none opacity-20 cursor-not-allowed"}>
                         {
