@@ -2,6 +2,8 @@
 import ProjectsIcon from "../../../assets/icons/project.svg";
 import AboutIcon from "../../../assets/icons/about.svg";
 import ContactIcon from "../../../assets/icons/contact.svg";
+import RidwanLogo from "../../../assets/logo/favicon.svg";
+
 import { Image } from "astro:assets";
 
 import NavbarMobileTrigger from "./NavbarMobileTrigger";
@@ -15,9 +17,10 @@ import NavbarMobileTrigger from "./NavbarMobileTrigger";
                   class="navbar-container relative flex top-0 left-0 -translate-x-full md:translate-x-0 w-screen md:w-full h-screen md:h-full md:justify-between flex-row py-2 px-6 duration-500 bg-black md:bg-transparent"
             >
                   <div class="hidden flex-1 md:flex md:justify-start md:items-center">
-                        <h1 class="text-2xl font-bold bg-linear-to-tr from-accent from-purple-400 to-purple-500  bg-clip-text text-transparent">
-                              <a href="/#">IWAN</a>
-                        </h1>
+                        <a href="/#" aria-label="Go to top" class="flex items-center gap-4 font-semibold text-2xl text-gray-300">
+                              <Image src={RidwanLogo} alt="Ridwan Logo" width={30} />
+                              Ridwan
+                        </a>
                   </div>
                   <ul class="flex w-full md:w-fit flex-col md:flex-row justify-start md:justify-center items-start md:items-center mt-6 md:mt-0 gap-12 sm:gap-18 md:gap-8 p-8 md:p-0">
                         <li>
